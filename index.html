@@ -20,6 +20,9 @@
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     }
+    html {
+        scroll-behavior: smooth;
+    }
     body {
         background:linear-gradient(10deg , #0f032c , #3c0097) no-repeat;
         overflow-x: hidden;
@@ -41,11 +44,13 @@
     font-size: 20px;
     height: 54px;
     border-radius: 10px;
-    background: #0f032c;
+    background: #0f032c !important;
     color:white
 }
+
 .repos-container .get-repos input:focus {
 outline: 2px solid #3c0097;
+background: #0f032c !important;
 }
 .repos-container .get-repos .get-button {
     width: 140px;
@@ -234,6 +239,9 @@ a .uil {
             let to = document.querySelector(".topP");
             let too = document.querySelector(".topP .to")
             to.style.background = `conic-gradient(rgb(148 33 255) ${scroll}% , #d7d7d7 ${scroll}%)`
+            to.addEventListener("click",()=>{
+                document.documentElement.scrollTop = 0
+            })
         }
 
 
